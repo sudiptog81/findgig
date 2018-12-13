@@ -8,7 +8,7 @@
 
 This app uses a [Postgres](https://www.postgresql.org/) database **findgig** with default user credentials.
 
-```
+```bash
  user: postgres
  password: 123456
 ```
