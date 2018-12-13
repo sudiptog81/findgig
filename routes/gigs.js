@@ -8,7 +8,6 @@ const Gig = require("../models/Gig");
 const Sequelize = require("sequelize");
 const op = Sequelize.Op;
 
-// get list of gigs
 router.get("/", (req, res) => {
   Gig.findAll()
     .then(gigs => {
@@ -19,14 +18,11 @@ router.get("/", (req, res) => {
     .catch(err => console.log(`Error: ${err}`));
 });
 
-// add gig form
 router.get("/add", (req, res) => res.render("add"));
 
-// add a gig
 router.post("/add", (req, res) => {
   let { title, technologies, budget, description, contact_email } = req.body;
   let errors = [];
-  // validation
   if (!title) {
     errors.push({ text: "Please add a title" });
   }
@@ -40,7 +36,6 @@ router.post("/add", (req, res) => {
     errors.push({ text: "Please add a contact email" });
   }
 
-  // check
   if (errors.length > 0) {
     res.render("add", {
       errors,
@@ -59,7 +54,6 @@ router.post("/add", (req, res) => {
 
     technologies = technologies.toLowerCase().replace(/,/g, ", ");
 
-    // insert data
     Gig.create({
       title,
       technologies,
@@ -72,11 +66,14 @@ router.post("/add", (req, res) => {
   }
 });
 
-// search
 router.get("/search", (req, res) => {
   let { search_query } = req.query;
   search_query = search_query.toLowerCase();
-  Gig.findAll({ where: { technologies: { [op.like]: `%${search_query}%` } } })
+  Gig.findAll({
+    where: {
+      technologies: { [op.like]: `%${search_query}%` }
+    }
+  })
     .then(gigs => res.render("gigs", { gigs }))
     .catch(err => console.log(`Error: ${err}`));
 });
