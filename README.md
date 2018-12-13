@@ -28,12 +28,15 @@ CREATE TABLE public.gigs (
 );
 ```
 
-Create the corresponding table in your database and change the database credentials by creating a new file in the _config_ folder _config/database.js_.
+Create the corresponding table in your database and change the database credentials by changing the datbase configuration template in the _config_ folder (_config/database.template.js_) and then rename the file to _database.js_.
 
 ```js
-const Sequelize = require("sequelize");
-const DATABASE_URL = "postgres://user:pass@localhost:5432/findgig";
-module.exports = new Sequelize(DATABASE_URL);
+// Change DB_name, DB_user, DB_pass and DB_host.
+// Rename this file to database.js
+module.exports = new Sequelize("DB_name", "DB_user", "DB_pass", {
+  host: "DB_host",
+  ...
+});
 ```
 
 If you want to use some other SQL database such as MySQL, SQLite or Microsoft SQL Server, refer to the Sequelize documentation for more information. You may have to install additional NodeJS packages.
