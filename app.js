@@ -9,7 +9,7 @@ const db = require("./config/database");
 
 // test db connection
 db.authenticate()
-  .then(() => console.log("Database findgig connected"))
+  .then(() => console.log("Database connected"))
   .catch(err => console.log(`Error: ${err}`));
 
 const app = express();
