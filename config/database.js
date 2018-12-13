@@ -1,11 +1,8 @@
 /* eslint-disable indent */
 const Sequelize = require("sequelize");
 module.exports = new Sequelize(
-  process.env.DB,
-  process.env.USER,
-  process.env.PASS,
+  process.env.DATABASE_URL || "postgres://postgres:123456@localhost/findgig",
   {
-    host: process.env.HOST,
     dialect: "postgres",
     dialectOptions: {
       ssl: true
