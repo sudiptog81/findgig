@@ -32,11 +32,8 @@ Create the corresponding table in your database and change the database credenti
 
 ```js
 const Sequelize = require("sequelize");
-module.exports = new Sequelize("findgig", "<USER>", "<PASS>", {
-  host: "localhost",
-  dialect: "postgres",
-  ...
-});
+const DATABASE_URL = "postgres://user:pass@localhost:5432/findgig";
+module.exports = new Sequelize(DATABASE_URL);
 ```
 
 If you want to use some other SQL database such as MySQL, SQLite or Microsoft SQL Server, refer to the Sequelize documentation for more information. You may have to install additional NodeJS packages and change the _dialect_ in _config/database.js_.
