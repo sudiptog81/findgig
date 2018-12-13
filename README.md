@@ -6,11 +6,26 @@
 
 ### Database Configuration
 
-This app uses a [Postgres](https://www.postgresql.org/) database **findgig** with default user credentials.
+This app uses a [Postgres](https://www.postgresql.org/) database **findgig** with default user credentials .
 
 ```bash
  user: postgres
  password: 123456
+```
+
+Create a table **gigs** in the _public_ schema, if using Postgres or in the **findgig** database for other implementations. Structure the table with the following columns, adapt it yourself for databases other than Postgres.
+
+```sql
+CREATE TABLE public.gigs (
+  id integer NOT NULL,
+  title character varying(200),
+  technologies character varying(200),
+  budget character varying(20),
+  description text,
+  contact_email character varying,
+  "createdAt" date,
+  "updatedAt" date
+);
 ```
 
 Create the corresponding table in your database and change the database credentials in _config/database.js_.
@@ -51,4 +66,5 @@ npm run dev
 
 ### License
 
-This project is licensed under the MIT License
+This project is licensed under the MIT License.
+Adapted from [CodeGig by Brad Traversy](https://github.com/bradtraversy/codegig)
