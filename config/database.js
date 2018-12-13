@@ -1,11 +1,11 @@
 /* eslint-disable indent */
 const Sequelize = require("sequelize");
 module.exports = new Sequelize(
-  "d7c13re0lk2iu",
-  "egnhigrhidfoav",
-  "71536e9fe3c7067e8d20217f2a35872c9275f24abadb82eaa30b9346d5f66ac3",
+  process.env.DB,
+  process.env.USER,
+  process.env.PASS,
   {
-    host: "ec2-54-227-249-201.compute-1.amazonaws.com",
+    host: process.env.HOST,
     dialect: "postgres",
     dialectOptions: {
       ssl: true
