@@ -1,0 +1,23 @@
+{
+  "name": "findgig",
+  "version": "1.0.0",
+  "description": "Job Portal for Coders",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "author": "Sudipto Ghosh",
+  "license": "MIT",
+  "devDependencies": {
+    "nodemon": "^1.18.8"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "express-handlebars": "^3.0.0",
+    "pg": "^7.7.1",
+    "pg-hstore": "^2.3.2",
+    "sequelize": "^4.41.2"
+  }
+}
