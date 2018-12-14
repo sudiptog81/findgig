@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node app.js",
     "dev": "nodemon app.js",
-    "test": "eslint *.js */*.js && node app.js"
+    "test": "eslint *.js config/*.js models/*.js routes/*.js && node app.js"
   },
   "author": "Sudipto Ghosh",
   "license": "MIT",
