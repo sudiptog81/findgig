@@ -5,7 +5,7 @@ jobs:
       # specify the version you desire here
       - image: circleci/node:11
 
-    working_directory: ~/repo
+    working_directory: /tmp/
 
     steps:
       - checkout
@@ -25,5 +25,16 @@ jobs:
       # run tests!
       - run: npm test
 
+      - run:
+          shell: /bin/bash
+          command: |
+            mkdir -p /tmp/test-results
+            echo "done"
+          when: always
+
       - store_test_results:
-          path: test-results
+          path: /tmp/test-results
+
+      - store_artifacts:
+          path: /tmp/test-results
+          destination: test_results
