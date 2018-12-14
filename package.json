@@ -6,12 +6,16 @@
   "scripts": {
     "start": "node app.js",
     "dev": "nodemon app.js",
-    "test": "eslint *.js config/*.js models/*.js routes/*.js"
+    "lint": "eslint app.js",
+    "test": "jest app.test.js",
+    "coverage": "jest --collectCoverageFrom=app.test.js --coverage app.test.js"
   },
   "author": "Sudipto Ghosh",
   "license": "MIT",
   "devDependencies": {
     "eslint": "^5.10.0",
+    "eslint-plugin-jest": "^22.1.2",
+    "jest": "^23.6.0",
     "nodemon": "^1.18.8"
   },
   "dependencies": {
