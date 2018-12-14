@@ -1,5 +1,7 @@
 # </> FindGig
 
+[![build passing](https://img.shields.io/circleci/project/github/sudiptog81/findgig.svg?style=flat-square)](https://github.com/sudiptog81/findgig) [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat-square)](https://github.com/sudiptog81/findgig/issues) [![Dependency Status](https://img.shields.io/david/sudiptog81/findgig.svg?style=flat-square)](https://david-dm.org/sudiptog81/findgig) [![devDependencies Status](https://img.shields.io/david/dev/sudiptog81/findgig.svg?style=flat-square)](https://david-dm.org/sudiptog81/findgig?type=dev)
+
 > Simple gig finding app for freelancing coders. This app uses Node, Express, Sequalize and Handlebars.
 
 ## Quick Start
