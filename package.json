@@ -8,7 +8,7 @@
     "dev": "nodemon app.js",
     "lint": "eslint app.js",
     "test": "jest app.test.js",
-    "coverage": "jest --collectCoverageFrom=app.test.js --coverage app.test.js"
+    "coverage": "jest --collectCoverageFrom=app.test.js"
   },
   "author": "Sudipto Ghosh",
   "license": "MIT",
