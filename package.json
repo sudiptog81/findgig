@@ -11,6 +11,7 @@
   "author": "Sudipto Ghosh",
   "license": "MIT",
   "devDependencies": {
+    "eslint": "^5.10.0",
     "nodemon": "^1.18.8"
   },
   "dependencies": {
