@@ -28,13 +28,13 @@ jobs:
       - run:
           shell: /bin/bash
           command: |
-            mkdir r
+            mkdir test
             echo "done"
           when: always
 
       - store_test_results:
-          path: ~/repo
+          path: ~/repo/test
 
       - store_artifacts:
-          path: ~/repo
-          destination: repo
+          path: ~/repo/test
+          destination: test
