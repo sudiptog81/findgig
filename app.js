@@ -7,10 +7,15 @@ const bodyParser = require("body-parser");
 const path = require("path");
 const db = require("./config/database");
 
-// test db connection
 db.authenticate()
-  .then(() => console.log("Database connected"))
-  .catch(err => console.log(`Error: ${err}`));
+  .then(() => {
+    console.log("Database connected");
+    return "Passed";
+  })
+  .catch(err => {
+    console.log(`Error: ${err}`);
+    return "Failed";
+  });
 
 const app = express();
 
